@@ -72,7 +72,8 @@ def send_formatted_message_with_gif(url):
                     f"📁 <b>Repository:</b> {repository}" \
                     f"\n🔔 <b>Event name:</b> {event_name}" \
                     f"\n🌿 <b>Branch:</b> {branch}" \
-                    f"\n👤 <b>Actor:</b> {actor}"
+                    f"\n👤 <b>Actor:</b> {actor}" \
+                    f"\n👥 <b>Repository owner:</b> {repository_owner}"
     
     # add buttons on bottom
     keyboard = types.InlineKeyboardMarkup()
