@@ -48,6 +48,8 @@ def send_formatted_message(url):
     bot.send_message(DEV_CHAT_ID, formatted_message, parse_mode='HTML', disable_web_page_preview=True)
 
 def send_formatted_message_with_gif(url):
+    dex_tools_url = "https://www.dextools.io/app/en/bnb/pair-explorer/0xa77ba1446c11e0ef90b3e39d1c3c7a05d8f680b2"
+    alpha_dapp = "https://vapecat.xyz/alpha"
     gif_url = random.choice(GIFS_ARRAY)
     formatted_message = f"ℹ️ <b>New Event on GitHub</b>" \
                     f"\n\n" \
@@ -60,8 +62,8 @@ def send_formatted_message_with_gif(url):
     # add buttons on bottom
     keyboard = types.InlineKeyboardMarkup()
     button = types.InlineKeyboardButton(text='See on Github', url=url)
-    button2 = types.InlineKeyboardButton(text='See on Github', url=url)
-    button3 = types.InlineKeyboardButton(text='See on Github', url=url)
+    button2 = types.InlineKeyboardButton(text='Dextools', url=dex_tools_url)
+    button3 = types.InlineKeyboardButton(text='Go to Alpha Dapp (SOON)', url=alpha_dapp)
     keyboard.add(button)
     keyboard.add(button2)
     keyboard.add(button3)
