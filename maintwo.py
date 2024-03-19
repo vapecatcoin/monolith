@@ -1,6 +1,8 @@
 import argparse
 import os
 import telebot
+import random
+from telebot import types
 
 DEV_CHAT_ID = os.environ.get('DEV_CHAT_ID') or 'unknown'
 repository = os.environ.get('GITHUB_REPOSITORY') or 'unknown'
@@ -14,6 +16,13 @@ commit_url = os.environ.get('COMMIT_URL') or 'unknown'
 
 bot = telebot.TeleBot(my_secret)
 
+MAIN_GIF = "https://raw.githubusercontent.com/vapecatcoin/cdn/main/catrings.gif"
+
+GIFS_ARRAY = [
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/catrings.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat.gif",
+]
+
 def send_formatted_message(url):
     formatted_message = f"<b>New Event on GitHub</b>" \
                     f"\n\n" \
@@ -24,6 +33,24 @@ def send_formatted_message(url):
                     f"\nRepository owner: {repository_owner}" \
                     f"\n\n<a href='{url}'>Check it out!</a>\n"
     bot.send_message(DEV_CHAT_ID, formatted_message, parse_mode='HTML', disable_web_page_preview=True)
+
+def send_formatted_message_with_gif(url):
+    gif_url = random.choice(GIFS_ARRAY)
+    formatted_message = f"<b>New Event on GitHub</b>" \
+                    f"\n\n" \
+                    f"Repository: {repository}" \
+                    f"\nEvent name: {event_name}" \
+                    f"\nBranch: {branch}" \
+                    f"\nActor: {actor}" \
+                    f"\nRepository owner: {repository_owner}" \
+                    f"\n\n<a href='{url}'>Check it out!</a>\n"
+    
+    # add buttons on bottom
+    keyboard = types.InlineKeyboardMarkup()
+    button = types.InlineKeyboardButton(text='Click Here', url=url)
+    keyboard.add(button)
+
+    bot.send_animation(DEV_CHAT_ID, gif_url, caption=formatted_message, parse_mode='HTML', reply_markup=keyboard)
 
 def main():
     """
@@ -38,14 +65,14 @@ def main():
         github_pr_url = f"https://www.github.com/{repository}/pull/{args.pr_number}"
         print(github_pr_url)
 
-        send_formatted_message(github_pr_url)
+        send_formatted_message_with_gif(github_pr_url)
 
     else:
         print("This is not a pull request")
         # make commit url for the push event
         if event_name == 'push':
             print(commit_url)
-            send_formatted_message(commit_url)
+            send_formatted_message_with_gif(github_pr_url)
         
 if __name__ == "__main__":
     main()
