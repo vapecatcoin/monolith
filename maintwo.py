@@ -72,7 +72,7 @@ def main():
         # make commit url for the push event
         if event_name == 'push':
             print(commit_url)
-            send_formatted_message_with_gif(github_pr_url)
+            send_formatted_message_with_gif(commit_url)
         
 if __name__ == "__main__":
     main()
