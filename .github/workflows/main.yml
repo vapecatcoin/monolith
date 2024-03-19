@@ -33,9 +33,9 @@ jobs:
       - name: execute py script # run main.py
         run: |
           if [ ${{ github.event_name }} == 'pull_request' ]; then
-            python maintwo.py --pr_number ${{ github.event.number }}
+            python scripts/teleupdatev2.py --pr_number ${{ github.event.number }}
           else
-            python maintwo.py
+            python scripts/teleupdatev2.py
           fi
         env: 
           MY_SECRET: ${{ secrets.MY_SECRET }}
