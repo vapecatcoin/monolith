@@ -8,7 +8,7 @@ event_name = os.environ.get('GITHUB_EVENT_NAME') or 'unknown'
 branch = os.environ.get('GITHUB_REF') or 'unknown'
 actor = os.environ.get('GITHUB_ACTOR') or 'unknown'
 repository_owner = os.environ.get('GITHUB_REPOSITORY_OWNER') or 'unknown'
-my_secret = os.environ.get('MY_SECRET')
+my_secret = os.environ.get('MY_SECRET') or 'unknown'
 
 bot = telebot.TeleBot(my_secret)
 
@@ -26,3 +26,4 @@ formatted_message = f"<b>New Event on GitHub</b>" \
                     f"\n\n<a href='{repo_url}'>{repository}</a>\nMirrored to Arweave" \
                     
 bot.send_message(DEV_CHAT_ID, formatted_message, parse_mode='HTML')
+
