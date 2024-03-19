@@ -31,9 +31,15 @@ jobs:
           pip install -r requirements.txt
 
       - name: execute py script # run main.py
-        run: python main.py
+        run: |
+          if [ ${{ github.event_name }} == 'pull_request' ]; then
+            python maintwo.py --pr_number ${{ github.event.number }}
+          else
+            python maintwo.py
+          fi
         env: 
           MY_SECRET: ${{ secrets.MY_SECRET }}
           DEV_CHAT_ID: ${{ secrets.DEV_CHAT_ID }}
           PROD_CHAT_ID: ${{ secrets.PROD_CHAT_ID }}
           ACTION_AUTHOR: ${{ secrets.ACTION_AUTHOR }}
+          COMMIT_URL: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
