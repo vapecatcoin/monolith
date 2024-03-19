@@ -6,3 +6,5 @@ git submodule add [URL]
 
 git submodule update --remote --recursive
 
+git reset --hard --recurse-submodules
+
