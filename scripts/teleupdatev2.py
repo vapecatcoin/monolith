@@ -21,6 +21,12 @@ MAIN_GIF = "https://raw.githubusercontent.com/vapecatcoin/cdn/main/catrings.gif"
 GIFS_ARRAY = [
     "https://raw.githubusercontent.com/vapecatcoin/cdn/main/catrings.gif",
     "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat2.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat3.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat4.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat5.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat6.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat7.gif",
 ]
 
 def send_formatted_message(url):
