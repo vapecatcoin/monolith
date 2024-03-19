@@ -19,6 +19,7 @@ bot = telebot.TeleBot(my_secret)
 MAIN_GIF = "https://raw.githubusercontent.com/vapecatcoin/cdn/main/catrings.gif"
 
 GIFS_ARRAY = [
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/catrings.gif"
     "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat.gif",
     "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat2.gif",
     "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat3.gif",
@@ -34,6 +35,21 @@ GIFS_ARRAY = [
     "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat13.gif",
     "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat14.gif",
     "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat15.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat16.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat17.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat18.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat19.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat20.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat21.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat22.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat23.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat24.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat25.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat26.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat27.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat28.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat29.gif",
+    "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat30.gif"
 ]
 
 def send_formatted_message(url):
