@@ -28,3 +28,4 @@ jobs:
           MY_SECRET: ${{ secrets.MY_SECRET }}
           DEV_CHAT_ID: ${{ secrets.DEV_CHAT_ID }}
           PROD_CHAT_ID: ${{ secrets.PROD_CHAT_ID }}
+          MESSAGE: {{ $(git log -1 --pretty=%B) }}

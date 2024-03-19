@@ -16,9 +16,6 @@ bot = telebot.TeleBot(my_secret)
 # build repo url
 repo_url = f"https://www.github.com/{repository}"
 
-if actor == 'vapecatcoin':
-    actor = 'Vapecatcoin420'
-
 # formatted_message = f"New {event_name} on {repository} by {actor} on branch {branch}"
 formatted_message = f"<b>New Event on GitHub</b>" \
                     f"\n\n" \
