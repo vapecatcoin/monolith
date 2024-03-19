@@ -9,6 +9,7 @@ branch = os.environ.get('GITHUB_REF') or 'unknown'
 actor = os.environ.get('GITHUB_ACTOR') or 'unknown'
 repository_owner = os.environ.get('GITHUB_REPOSITORY_OWNER') or 'unknown'
 my_secret = os.environ.get('MY_SECRET') or 'unknown'
+commit_message = os.environ.get('COMMIT_MESSAGE') or 'unknown'
 
 bot = telebot.TeleBot(my_secret)
 
@@ -23,6 +24,7 @@ formatted_message = f"<b>New Event on GitHub</b>" \
                     f"\n\n" \
                     f"Repository: {repository}" \
                     f"\nEvent name: {event_name}" \
+                    f"\nCommit message: {commit_message}" \
                     f"\nBranch: {branch}" \
                     f"\nActor: {actor}" \
                     f"\nRepository owner: {repository_owner}" \
