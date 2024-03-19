@@ -97,7 +97,7 @@ def send_formatted_message_with_gif(url):
     keyboard.add(button)
     keyboard.add(button2)
 
-    bot.send_animation(PROD_CHAT_ID, gif_url, caption=formatted_message, parse_mode='HTML', reply_markup=keyboard)
+    bot.send_animation(DEV_CHAT_ID, gif_url, caption=formatted_message, parse_mode='HTML', reply_markup=keyboard)
 
 def main():
     """
