@@ -16,8 +16,6 @@ commit_url = os.environ.get('COMMIT_URL') or 'unknown'
 
 bot = telebot.TeleBot(my_secret)
 
-MAIN_GIF = "https://raw.githubusercontent.com/vapecatcoin/cdn/main/catrings.gif"
-
 GIFS_ARRAY = [
     "https://raw.githubusercontent.com/vapecatcoin/cdn/main/catrings.gif"
     "https://raw.githubusercontent.com/vapecatcoin/cdn/main/cat.gif",
