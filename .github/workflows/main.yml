@@ -10,6 +10,8 @@ on:
       - main
       - 'mona/octocat'
       - 'releases/**'
+  label:
+    types: [created, edited]
 
 jobs:
   build:
