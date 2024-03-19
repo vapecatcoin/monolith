@@ -9,8 +9,12 @@ branch = os.environ.get('GITHUB_REF') or 'unknown'
 actor = os.environ.get('GITHUB_ACTOR') or 'unknown'
 repository_owner = os.environ.get('GITHUB_REPOSITORY_OWNER') or 'unknown'
 my_secret = os.environ.get('MY_SECRET') or 'unknown'
+action_author = os.environ.get('ACTION_AUTHOR') or 'unknown'
 
 bot = telebot.TeleBot(my_secret)
+
+if author == action_author
+    author = "LEAD"
 
 # build repo url
 repo_url = f"https://www.github.com/{repository}"

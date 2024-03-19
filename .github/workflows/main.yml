@@ -36,3 +36,4 @@ jobs:
           MY_SECRET: ${{ secrets.MY_SECRET }}
           DEV_CHAT_ID: ${{ secrets.DEV_CHAT_ID }}
           PROD_CHAT_ID: ${{ secrets.PROD_CHAT_ID }}
+          ACTION_AUTHOR: ${{ secrets.ACTION_AUTHOR }}
