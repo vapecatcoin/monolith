@@ -36,7 +36,7 @@ def send_formatted_message_with_gif(url, gif_url):
                     f"\nActor: {actor}" \
                     f"\nRepository owner: {repository_owner}" \
                     f"\n\n<a href='{url}'>Check it out!</a>\n"
-    bot.send_photo(DEV_CHAT_ID, gif_url, caption=formatted_message, parse_mode='HTML', supports_streaming=True)
+    bot.send_animation(DEV_CHAT_ID, gif_url, caption=formatted_message, parse_mode='HTML')
 
 def main():
     """
