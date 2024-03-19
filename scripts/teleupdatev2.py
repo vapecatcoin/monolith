@@ -46,7 +46,7 @@ def send_formatted_message_with_gif(url):
     
     # add buttons on bottom
     keyboard = types.InlineKeyboardMarkup()
-    button = types.InlineKeyboardButton(text='Go to Github', url=url)
+    button = types.InlineKeyboardButton(text='See on Github', url=url)
     keyboard.add(button)
 
     bot.send_animation(DEV_CHAT_ID, gif_url, caption=formatted_message, parse_mode='HTML', reply_markup=keyboard)
