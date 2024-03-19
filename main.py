@@ -13,7 +13,7 @@ action_author = os.environ.get('ACTION_AUTHOR') or 'unknown'
 
 bot = telebot.TeleBot(my_secret)
 
-if author == action_author
+if author == action_author:
     author = "LEAD"
 
 # build repo url
