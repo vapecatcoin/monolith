@@ -7,7 +7,7 @@ from telebot import types
 DEV_CHAT_ID = os.environ.get('DEV_CHAT_ID') or 'unknown'
 PROD_CHAT_ID = os.environ.get('PROD_CHAT_ID') or 'unknown'
 repository = os.environ.get('GITHUB_REPOSITORY') or 'unknown'
-repository = repository.replace("vapecatcoin/", "")
+striped_repository = repository.replace("vapecatcoin/", "")
 event_name = os.environ.get('GITHUB_EVENT_NAME') or 'unknown'
 branch = os.environ.get('GITHUB_REF') or 'unknown'
 actor = os.environ.get('GITHUB_ACTOR') or 'unknown'
@@ -83,7 +83,7 @@ def send_formatted_message_with_gif(url):
     gif_url = random.choice(GIFS_ARRAY)
     formatted_message = f"ℹ️ <b>New Event on GitHub</b>" \
                     f"\n\n" \
-                    f"📁 <b>Repository:</b> {repository}" \
+                    f"📁 <b>Repository:</b> {striped_repository}" \
                     f"\n🔔 <b>Event name:</b> {event_name}" \
                     f"\n🌿 <b>Branch:</b> {branch}" \
                     f"\n👤 <b>Actor:</b> {actor}" \
