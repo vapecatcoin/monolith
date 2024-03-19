@@ -5,6 +5,7 @@ import random
 from telebot import types
 
 DEV_CHAT_ID = os.environ.get('DEV_CHAT_ID') or 'unknown'
+PROD_CHAT_ID = os.environ.get('PROD_CHAT_ID') or 'unknown'
 repository = os.environ.get('GITHUB_REPOSITORY') or 'unknown'
 # remove vapecatcoin/ from repository name
 repository = repository.replace("vapecatcoin/", "")
@@ -53,6 +54,15 @@ GIFS_ARRAY = [
 ]
 
 def send_formatted_message(url):
+    """
+    Sends a formatted message to the specified URL using the bot.
+
+    Args:
+        url (str): The URL to which the message will be sent.
+
+    Returns:
+        None
+    """
     formatted_message = f"<b>New Event on GitHub</b>" \
                     f"\n\n" \
                     f"Repository: {repository}" \
@@ -64,6 +74,11 @@ def send_formatted_message(url):
     bot.send_message(DEV_CHAT_ID, formatted_message, parse_mode='HTML', disable_web_page_preview=True)
 
 def send_formatted_message_with_gif(url):
+    """
+    A function to send a formatted message with a GIF and buttons to a Telegram chat.
+    Parameters:
+        url (str): The URL to be opened when the first button is clicked.
+    """
     dex_tools_url = "https://www.dextools.io/app/en/bnb/pair-explorer/0xa77ba1446c11e0ef90b3e39d1c3c7a05d8f680b2"
     alpha_dapp = "https://vapecat.xyz/alpha"
     gif_url = random.choice(GIFS_ARRAY)
@@ -82,7 +97,7 @@ def send_formatted_message_with_gif(url):
     keyboard.add(button)
     keyboard.add(button2)
 
-    bot.send_animation(DEV_CHAT_ID, gif_url, caption=formatted_message, parse_mode='HTML', reply_markup=keyboard)
+    bot.send_animation(PROD_CHAT_ID, gif_url, caption=formatted_message, parse_mode='HTML', reply_markup=keyboard)
 
 def main():
     """
