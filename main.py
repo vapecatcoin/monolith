@@ -13,8 +13,8 @@ action_author = os.environ.get('ACTION_AUTHOR') or 'unknown'
 
 bot = telebot.TeleBot(my_secret)
 
-if author == action_author:
-    author = "LEAD"
+if actor == action_author:
+    actor = "LEAD"
 
 # build repo url
 repo_url = f"https://www.github.com/{repository}"
