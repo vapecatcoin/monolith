@@ -15,6 +15,10 @@ bot = telebot.TeleBot(my_secret)
 # build repo url
 repo_url = f"https://www.github.com/{repository}"
 
+if event_name == 'pull_request':
+    pull_request_number = os.environ.get('PULL_REQUEST_NUMBER') or 'unknown'
+    repo_url = f"https://www.github.com/{repository}/pull/{pull_request_number}"
+
 # formatted_message = f"New {event_name} on {repository} by {actor} on branch {branch}"
 formatted_message = f"<b>New Event on GitHub</b>" \
                     f"\n\n" \
