@@ -36,18 +36,17 @@ def send_formatted_message(url):
 
 def send_formatted_message_with_gif(url):
     gif_url = random.choice(GIFS_ARRAY)
-    formatted_message = f"<b>New Event on GitHub</b>" \
+    formatted_message = f"ℹ️ <b>New Event on GitHub</b>" \
                     f"\n\n" \
-                    f"Repository: {repository}" \
-                    f"\nEvent name: {event_name}" \
-                    f"\nBranch: {branch}" \
-                    f"\nActor: {actor}" \
-                    f"\nRepository owner: {repository_owner}" \
-                    f"\n\n<a href='{url}'>Check it out!</a>\n"
+                    f"📁 <b>Repository:</b> {repository}" \
+                    f"\n🔔 <b>Event name:</b> {event_name}" \
+                    f"\n🌿 <b>Branch:</b> {branch}" \
+                    f"\n👤 <b>Actor:</b> {actor}" \
+                    f"\n👥 <b>Repository owner:</b> {repository_owner}"
     
     # add buttons on bottom
     keyboard = types.InlineKeyboardMarkup()
-    button = types.InlineKeyboardButton(text='Click Here', url=url)
+    button = types.InlineKeyboardButton(text='Go to Github', url=url)
     keyboard.add(button)
 
     bot.send_animation(DEV_CHAT_ID, gif_url, caption=formatted_message, parse_mode='HTML', reply_markup=keyboard)
