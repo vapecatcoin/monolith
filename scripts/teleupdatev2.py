@@ -7,7 +7,6 @@ from telebot import types
 DEV_CHAT_ID = os.environ.get('DEV_CHAT_ID') or 'unknown'
 PROD_CHAT_ID = os.environ.get('PROD_CHAT_ID') or 'unknown'
 repository = os.environ.get('GITHUB_REPOSITORY') or 'unknown'
-# remove vapecatcoin/ from repository name
 repository = repository.replace("vapecatcoin/", "")
 event_name = os.environ.get('GITHUB_EVENT_NAME') or 'unknown'
 branch = os.environ.get('GITHUB_REF') or 'unknown'
